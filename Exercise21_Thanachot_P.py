@@ -3,7 +3,17 @@ import math
 
 def leftClickButton(event):
     BMI = float(textBox2.get()) / math.pow(float(textBox.get())/100,2)
-    labelresult.configure(text=BMI)
+    labellabelresult.configure(text=BMI)
+    if BMI >= 30.0:
+        labellabelresult2.configure(text="อ้วนมาก")
+    elif BMI >= 25.0:
+        labellabelresult2.configure(text="อ้วน")
+    elif BMI >= 23.0:
+        labellabelresult2.configure(text="น้ำหนักเกิน")
+    elif BMI >= 18.6:
+        labellabelresult2.configure(text="น้ำหนักปกติ เหมาะสม")
+    else:
+        labellabelresult2.configure(text="ผอมเกินไป")
 
 MainWindows = Tk()
 
@@ -19,7 +29,15 @@ calculateButton = Button(MainWindows,text="คำนวณ")
 calculateButton.grid(row=2)
 calculateButton.bind('<Button-1>', leftClickButton)
 
-labelresult = Label(MainWindows,text="ผลลัพธ์")
-labelresult.grid(row=2,column=1)
+labeltext1 = Label(MainWindows,text="ผลลัพธ์")
+labeltext1.grid(row=4,column=0)
+labeltext2 = Label(MainWindows,text="ค่า BMI : ")
+labeltext2.grid(row=4,column=0)
+labellabelresult = Label(MainWindows,text="")
+labellabelresult.grid(row=4,column=1)
+labeltext3 = Label(MainWindows,text="คุณอยู่ในเกณฑ์ : ")
+labeltext3.grid(row=5,column=0)
+labellabelresult2 = Label(MainWindows,text="")
+labellabelresult2.grid(row=5,column=1)
 
 MainWindows.mainloop()
