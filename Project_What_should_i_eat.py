@@ -14,6 +14,7 @@ def random(event):
         label_error.configure(text = "", bg = "#F1F1F1")
     except IndexError:
         label_error.configure(text = "กรุณาเขียนเมนู", bg = "#FF6C62")
+        label5.configure(text = "", bg = "#F1F1F1")
 
 main = Tk()
 main.geometry("500x400")
